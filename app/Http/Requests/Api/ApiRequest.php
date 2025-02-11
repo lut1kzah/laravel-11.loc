@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Api;
 
 use App\Exceptions\ApiException;
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Foundation\Http\FormRequest;
 
 class ApiRequest extends FormRequest
 {
     //Вызов искл, если провалена функция авторицазии
    public function failedAuthorization()
    {
-       throw new ApiException('Authorization failed', 401);
+       throw new ApiException('Forbidden', 403);
    }
     //Вызов искл, если провалена функция валидации
    public function failedValidation(Validator $validator)
    {
-       throw new ApiException('Validation failed', 422 , $validator->errors());
+       throw new ApiException('Unprocessable content', 422 , $validator->errors());
    }
 }

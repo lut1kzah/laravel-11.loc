@@ -26,6 +26,8 @@ class User extends Authenticatable
         'password',
         'role_id',
         'api_token',
+        'nickname',
+        'phone',
     ];
 
 
@@ -44,5 +46,14 @@ class User extends Authenticatable
     //Roles M:1
     public function role(){
         return $this->belongsTo(Role::class);
+    }
+    public function adresses(){
+        return $this->hasMany(Address::class);
+    }
+    public function carts(){
+        return $this->hasMany(Cart::class);
+    }
+    public function orders(){
+        return $this->hasMany(Order::class);
     }
 }

@@ -15,13 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('surname',32);
             $table->string('name');
-            $table->string('patronymic',64)->nullable();
+            $table->string('patronymic',32)->nullable();
             $table->boolean('sex');
             $table->date('birth_date');
             $table->string('avatar')->nullable();
             $table->string('email')->unique();
             $table->string('password');
-            $table->foreignId('role_id')->constrained();
+            $table->string('nickname',32)->unique();
+            $table->string('phone')->unique()->nullable();
+            $table->foreignId('role_id')->constrained('roles','id');
             $table->string('api_token')->unique()->nullable();
             $table->timestamps();
         });

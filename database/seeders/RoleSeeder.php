@@ -18,5 +18,11 @@ class RoleSeeder extends Seeder
             'name' => 'Пользователь',
             'code' => 'user',
         ]);
+
+        Role::create([
+            'name' => 'Мэнэдржер',
+            'code' => 'manager',
+        ]);
+
     }
 }

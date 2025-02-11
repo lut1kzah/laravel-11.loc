@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.warning{
+    color: red;
+}
+.log-in form{
+    border-bottom: green;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.log-in h2{
+ text-align: center;
+    margin: 10px;
+}
+.log-in{
+    background: #4a5568;
+    width: 200px;
+}

@@ -13,6 +13,7 @@ class UserSeeder extends Seeder
     {
         $role_admin = Role::where('code', 'admin')->first();
         $role_user = Role::where('code', 'user')->first();
+        $role_manager = Role::where('code', 'user')->first();
         User::create([
             'surname' => 'Франк',
             'name' => 'Артур',
@@ -37,5 +38,18 @@ class UserSeeder extends Seeder
             'api_token' => null,
             'role_id' => $role_user->id ,
             ]);
+        User::create([
+            'surname' => 'Попик',
+            'name' => 'Мопсик',
+            'patronymic' => 'Анатольевич',
+            'sex'=> 1,
+            'birth_date'=> '1996-01-07',
+            'avatar' => null,
+            'email' => 'baldarez@mail.ru',
+            'password' => 'noway',
+            'api_token' => null,
+            'role_id' => $role_manager->id ,
+            'nickname' => 'sousegeone',
+        ]);
     }
 }
